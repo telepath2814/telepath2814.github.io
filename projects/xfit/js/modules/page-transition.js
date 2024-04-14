@@ -27,9 +27,9 @@ function changePage(event) {
     const linkNode = event.currentTarget;
     const linkURL = linkNode.attributes.href.value;
     transition.classList.replace('page__transition--in', 'page__transition--out');
-    
+
     setTimeout(() => {
-        transition.classList.remove('page__transition--out');
+        transition.classList.replace('page__transition--out', 'page__transition--in');
         location = linkURL;
     }, TRANSITION_DURATION_MS);
 }
