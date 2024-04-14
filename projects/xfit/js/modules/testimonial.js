@@ -38,9 +38,11 @@ function nextClient() {
 }
 
 function paginationSelect(event) {
-    hideClient();
-    client = paginationList.indexOf(event.target);
-    showClient();
+    if (event.target != event.currentTarget) {
+        hideClient();
+        client = paginationList.indexOf(event.target);
+        showClient();
+    }
 }
 
 function hideClient() {
