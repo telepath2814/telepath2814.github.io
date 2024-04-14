@@ -10,6 +10,7 @@ function initTransition() {
     transition = document.querySelector('.page__transition');
     if (transition) {
         console.log('transition');
+        transition.classList.add('page__transition--in');
     }
 }
 
@@ -29,7 +30,7 @@ function changePage(event) {
     const linkURL = linkNode.attributes.href.value;
     transition.classList.replace('page__transition--in', 'page__transition--out');
     setTimeout(() => {
-        transition.classList.replace('page__transition--out', 'page__transition--in');
+        transition.classList.remove('page__transition--out');
         location = linkURL;
     }, TRANSITION_DURATION_MS);
 }
