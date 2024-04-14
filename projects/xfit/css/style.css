@@ -200,6 +200,13 @@ textarea:focus {
   position: fixed;
   left: -25%;
   top: 0;
+  /*&--in {
+     visibility: hidden;
+  }
+
+  &--out {
+     visibility: visible;
+  }*/
 }
 .page__transition-item-list {
   width: 100%;
@@ -221,12 +228,6 @@ textarea:focus {
   height: 100%;
   background: #ff841f;
   transition: transform 0.5s;
-}
-.page__transition--in {
-  visibility: hidden;
-}
-.page__transition--out {
-  visibility: visible;
 }
 .page__transition--in .page__transition-item-content {
   transform-origin: right;
