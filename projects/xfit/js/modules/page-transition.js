@@ -2,28 +2,18 @@ const TRANSITION_DURATION_MS = 500;
 let transition;
 
 function init() {
-    initTransition();
-    initLinks();
-
-    window.addEventListener('onbeforeunload', hideTransition);
+    inintTransition();
+    inintLinks();
 }
 
-function initTransition() {
+function inintTransition() {
     transition = document.querySelector('.page__transition');
     if (transition) {
-        hideTransition();
+        transition.classList.add('page__transition--in');
     }
 }
 
-function showTransition() {
-    transition.classList.replace('page__transition--hide', 'page__transition--show');
-}
-
-function hideTransition() {
-    transition.classList.replace('page__transition--show', 'page__transition--hide');
-}
-
-function initLinks() {
+function inintLinks() {
     const linkList = document.querySelectorAll('.page__link');
     if (linkList.length > 0) {
         linkList.forEach(link => {
@@ -36,9 +26,10 @@ function changePage(event) {
     event.preventDefault();
     const linkNode = event.currentTarget;
     const linkURL = linkNode.attributes.href.value;
-    showTransition();
-
+    transition.classList.replace('page__transition--in', 'page__transition--out');
+    
     setTimeout(() => {
+        transition.classList.remove('page__transition--out');
         location = linkURL;
     }, TRANSITION_DURATION_MS);
 }
