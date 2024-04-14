@@ -1,4 +1,4 @@
-const OFFSET_PX = 150;
+const OFFSET_PX = 100;
 let nodeList;
 
 function init() {
