@@ -196,7 +196,7 @@ textarea:focus {
   z-index: 300;
   display: flex;
   flex-direction: column;
-  visibility: hidden;
+  transition: visibility 0.5s;
   position: fixed;
   left: -25%;
   top: 0;
