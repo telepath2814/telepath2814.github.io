@@ -5,7 +5,7 @@ function init() {
     initTransition();
     initLinks();
 
-    window.addEventListener('popstate', hideTransition);
+    window.addEventListener('onbeforeunload', hideTransition);
 }
 
 function initTransition() {
