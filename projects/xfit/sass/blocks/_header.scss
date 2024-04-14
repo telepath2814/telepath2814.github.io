@@ -114,7 +114,7 @@
       background: $color-white;
       transition: height $menu-open-duration;
       overflow: hidden;
-   
+
       &-item {
          height: 80px;
          display: flex;
@@ -123,18 +123,18 @@
          padding: 0 10px;
          flex-shrink: 0;
          gap: 10px;
-   
+
          cursor: pointer;
          transition: background $hover-duration;
          text-transform: uppercase;
          font-weight: bold;
-   
+
          &-img {
             width: 20px;
             height: 20px;
             transition: transform calc($menu-open-duration / 2);
          }
-   
+
          &:hover {
             background: $color-accent;
          }
@@ -143,7 +143,7 @@
       &--open {
          height: 240px;
       }
-   
+
       &--open &-item-img {
          transform: rotate(90deg);
       }
@@ -175,13 +175,23 @@
       }
    }
 
+   @media (hover: none) {
+      &__language-item,
+      &__navigation-link,
+      &__mobile-menu-button {
+         background: inherit;
+      }
+   }
+
    @keyframes line1-open {
       0% {
          transform: translateY(-15px) rotate(0);
       }
+
       50% {
          transform: translateY(0);
       }
+
       100% {
          transform: rotate(45deg);
       }
@@ -191,21 +201,25 @@
       0% {
          transform: translateY(15px) rotate(0);
       }
+
       50% {
          transform: translateY(0);
       }
+
       100% {
          transform: rotate(45deg);
       }
    }
-   
+
    @keyframes line3-open {
       0% {
          transform: translateY(0) rotate(0);
       }
+
       50% {
          transform: translateY(0) rotate(0);
       }
+
       100% {
          transform: rotate(-45deg);
       }
@@ -215,9 +229,11 @@
       0% {
          transform: translateY(0) rotate(45deg);
       }
+
       50% {
          transform: rotate(0);
       }
+
       100% {
          transform: translateY(-15px);
       }
@@ -227,9 +243,11 @@
       0% {
          transform: translateY(0) rotate(45deg);
       }
+
       50% {
          transform: rotate(0);
       }
+
       100% {
          transform: translateY(15px);
       }
@@ -239,9 +257,11 @@
       0% {
          transform: translateY(0) rotate(-45deg);
       }
+
       50% {
          transform: rotate(0);
       }
+
       100% {
          transform: translateY(0);
       }

@@ -329,6 +329,11 @@ textarea:focus {
 .button--disabled .button__picture-image {
   transition: none;
 }
+@media (hover: none) {
+  .button__picture-image {
+    transform: inherit;
+  }
+}
 
 .class-overview__content {
   max-width: 1024px;
@@ -890,6 +895,11 @@ textarea:focus {
 @media screen and (max-width: 480px) {
   .header__content {
     padding: 0 10px;
+  }
+}
+@media (hover: none) {
+  .header__language-item, .header__navigation-link, .header__mobile-menu-button {
+    background: inherit;
   }
 }
 @keyframes line1-open {

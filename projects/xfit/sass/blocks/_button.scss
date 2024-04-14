@@ -86,4 +86,10 @@
    &--disabled &__picture-image {
       transition: none;
    }
+
+   @media (hover: none) {
+      &__picture-image {
+         transform: inherit; 
+      }
+   }
 }
