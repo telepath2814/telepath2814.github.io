@@ -222,6 +222,12 @@ textarea:focus {
   background: #ff841f;
   transition: transform 0.5s;
 }
+.page__transition--in {
+  visibility: hidden;
+}
+.page__transition--out {
+  visibility: visible;
+}
 .page__transition--in .page__transition-item-content {
   transform-origin: right;
   transform: scaleX(0);
