@@ -176,9 +176,9 @@
    }
 
    @media (hover: none) {
-      &__language-item,
-      &__navigation-link,
-      &__mobile-menu-button {
+      &__language-item:hover,
+      &__navigation-link:hover,
+      &__mobile-menu-button:hover {
          background: inherit;
       }
    }

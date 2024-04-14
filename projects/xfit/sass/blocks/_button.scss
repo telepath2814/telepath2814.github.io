@@ -88,7 +88,7 @@
    }
 
    @media (hover: none) {
-      &__picture-image {
+      &:hover &__picture-image {
          transform: inherit; 
       }
    }

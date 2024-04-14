@@ -330,7 +330,7 @@ textarea:focus {
   transition: none;
 }
 @media (hover: none) {
-  .button__picture-image {
+  .button:hover .button__picture-image {
     transform: inherit;
   }
 }
@@ -898,7 +898,7 @@ textarea:focus {
   }
 }
 @media (hover: none) {
-  .header__language-item, .header__navigation-link, .header__mobile-menu-button {
+  .header__language-item:hover, .header__navigation-link:hover, .header__mobile-menu-button:hover {
     background: inherit;
   }
 }
