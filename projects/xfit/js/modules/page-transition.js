@@ -2,13 +2,11 @@ const TRANSITION_DURATION_MS = 500;
 let transition;
 
 function init() {
-    console.log('init');
-    inintTransition();
-    inintLinks();
+    initTransition();
+    initLinks();
 }
 
-function inintTransition() {
-    console.log('inintTransition');
+function initTransition() {
     transition = document.querySelector('.page__transition');
     if (transition) {
         console.log('transition');
@@ -16,8 +14,7 @@ function inintTransition() {
     }
 }
 
-function inintLinks() {
-    console.log('inintLinks');
+function initLinks() {
     const linkList = document.querySelectorAll('.page__link');
     if (linkList.length > 0) {
         console.log('linkList.length > 0');

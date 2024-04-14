@@ -66,7 +66,7 @@
       width: 150%;
       height: 100%;
       z-index: 300;
-      display: flex;
+      display: none;
       flex-direction: column;
       transition: visibility $page-transition-duration;
       position: fixed;

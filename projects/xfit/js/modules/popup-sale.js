@@ -4,7 +4,7 @@ let popup;
 function init() {
     popup = document.querySelector('.popup-sale');
     if (popup) {
-        inintBackground();
+        initBackground();
         initButtonClose();
 
         const isShown = sessionStorage.getItem('popup-sale-shown');
@@ -14,7 +14,7 @@ function init() {
     }
 }
 
-function inintBackground() {
+function initBackground() {
     const background = document.querySelector('.popup-sale__background');
     if (background) {
         background.addEventListener('click', hidePopup);
