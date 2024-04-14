@@ -4,20 +4,28 @@ let transition;
 function init() {
     initTransition();
     initLinks();
+
+    window.addEventListener('popstate', hideTransition);
 }
 
 function initTransition() {
     transition = document.querySelector('.page__transition');
     if (transition) {
-        console.log('transition ' + new Date());
-        transition.classList.add('page__transition--in');
+        hideTransition();
     }
+}
+
+function showTransition() {
+    transition.classList.replace('page__transition--hide', 'page__transition--show');
+}
+
+function hideTransition() {
+    transition.classList.replace('page__transition--show', 'page__transition--hide');
 }
 
 function initLinks() {
     const linkList = document.querySelectorAll('.page__link');
     if (linkList.length > 0) {
-        console.log('linkList.length > 0' + new Date());
         linkList.forEach(link => {
             link.addEventListener('click', changePage);
         });
@@ -26,16 +34,12 @@ function initLinks() {
 
 function changePage(event) {
     event.preventDefault();
-
     const linkNode = event.currentTarget;
     const linkURL = linkNode.attributes.href.value;
-
-    transition.classList.replace('page__transition--in', 'page__transition--out');
+    showTransition();
 
     setTimeout(() => {
-        transition.classList.remove('page__transition--out');
         location = linkURL;
-        initTransition();
     }, TRANSITION_DURATION_MS);
 }
 
