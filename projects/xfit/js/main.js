@@ -1,5 +1,5 @@
 const moduleList = [
-    //await import('./modules/page-transition.js'),
+    await import('./modules/page-transition.js'),
     await import('./modules/language.js'), 
     await import('./modules/onscreen.js'),
     await import('./modules/header.js'),

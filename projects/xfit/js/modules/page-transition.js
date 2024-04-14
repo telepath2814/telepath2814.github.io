@@ -9,7 +9,6 @@ function init() {
 function initTransition() {
     transition = document.querySelector('.page__transition');
     if (transition) {
-        console.log('transition');
         transition.classList.add('page__transition--in');
     }
 }
