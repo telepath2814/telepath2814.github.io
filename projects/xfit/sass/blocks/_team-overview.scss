@@ -1,0 +1,81 @@
+@use '../partitials/config' as *;
+
+.team-overview {
+   &__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 80px 40px;
+   }
+
+   &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &-title {
+         text-align: left;
+      }
+
+      &-subtitle {
+         font-size: 44px;
+         line-height: 44px;
+         text-transform: uppercase;
+      }
+
+      &-description {
+         text-align: left;
+         margin-bottom: 40px;
+      }
+
+      &-link-list {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+
+   &__picture {
+      max-width: 560px;
+      max-height: 560px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+
+      &-image {
+         width: 100%;
+         display: flex;
+      }
+   }
+
+   @include screen-width(1280px) {
+      &__content {
+         flex-direction: column;
+         align-items: center;
+      }
+
+      &__info {
+         order: 1;
+         align-items: center;
+
+         &-title,
+         &-subtitle,
+         &-description {
+            text-align: center;
+         }
+
+         &-link-list {
+            align-items: center;
+         }
+      }
+
+      &__picture {
+         order: 0;
+      }
+   }
+
+   @include screen-width(480px) {
+      &__info-description {
+         text-align: left;
+      }
+   }
+}

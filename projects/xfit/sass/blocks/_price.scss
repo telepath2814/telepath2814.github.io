@@ -1,0 +1,111 @@
+@use '../partitials/config' as *;
+
+.price {
+   display: flex;
+   gap: 10px;
+
+   &__card {
+      width: 100%;
+      height: 600px;
+
+      padding: 20px;
+      color: $color-black;
+      background: $color-accent;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-info {
+         &-title {
+            font-size: 44px;
+            line-height: 44px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+         }
+
+         &-feature {
+            margin-top: 40px;
+            text-transform: lowercase;
+            list-style-position: inside;
+            list-style-image: url(../assets/icons/tick-black.svg);
+
+            &--black {
+               list-style-image: url(../assets/icons/tick-accent.svg);
+            }
+         }
+      }
+
+      &-price {
+         display: flex;
+         flex-direction: column;
+         font-weight: bold;
+         
+         &-sale {
+            font-size: 32px;
+            line-height: 32px;
+            text-transform: uppercase;
+         }
+
+         &-basic {
+            margin-bottom: 20px;
+            text-decoration: line-through;
+
+            &--hide {
+               visibility: hidden;
+            }
+         }
+      }
+
+      &--black {
+         color: $color-white;
+         background: $color-black;
+      }
+
+      &--white {
+         background: $color-white;
+      }
+   }
+
+   @include screen-width(1024px) {
+      flex-direction: column;
+      gap: 20px;
+
+      &__card {
+         width: auto;
+         height: 400px;
+         padding: 40px;
+         flex-direction: row;
+
+         &-price {
+            align-items: flex-end;
+            align-self: flex-end;
+         }
+      }
+   }
+
+   @include screen-width(768px) {
+      &__card {
+         width: auto;
+         height: 560px;
+         flex-direction: column;
+
+         &-price {
+            align-self: auto;
+         }
+      }
+   }
+
+   @include screen-width(480px) {
+      gap: 10px;
+
+      &__card {
+         padding: 20px;
+
+         &-price {
+            align-items: flex-start;
+            align-self: flex-start;
+         }
+      }
+   }
+}

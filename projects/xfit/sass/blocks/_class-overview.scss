@@ -1,0 +1,12 @@
+@use '../partitials/config' as *;
+
+.class-overview {
+    &__content {
+        max-width: 1024px;
+    }
+
+    &__image {
+        width: 100%;
+        margin: 40px 0;
+    }
+}

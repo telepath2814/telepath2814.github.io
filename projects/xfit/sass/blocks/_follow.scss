@@ -1,0 +1,105 @@
+@use '../partitials/config' as *;
+
+.follow {
+   background: $color-accent;
+
+   &__title {
+      width: 100%;
+      padding: 40px 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      &-text {
+         font-size: 96px;
+         font-weight: 800;
+         line-height: 96px;
+         color: $color-white;
+         text-transform: uppercase;
+      }
+
+      &-image {
+         width: 80px;
+         height: 80px;
+         background: url(../assets/icons/instagram-black.svg) no-repeat;
+      }
+   }
+
+   &__picture-list {
+      width: 100%;
+      display: grid;
+      grid: 1fr / repeat(6, 1fr);
+      background: $color-black;
+   }
+
+   &__picture {
+      overflow: hidden;
+      cursor: pointer;
+
+      &-image {
+         width: 100%;
+         height: auto;
+         display: flex;
+         transition: $hover-duration;
+      }
+
+      &:hover &-image {
+         transform: scale($hover-scale-image);
+      }
+   }
+
+   @include screen-width(1280px) {
+      &__title {
+         &-text {
+            font-size: 72px;
+            line-height: 72px;
+         }
+
+         &-image {
+            width: 72px;
+            height: 72px;
+         }
+      }
+   }
+   @include screen-width(1024px) {
+      &__picture-list {
+         grid: 1fr 1fr / 1fr 1fr 1fr;
+      }
+
+      &__title {
+         gap: 10px;
+
+         &-text {
+            font-size: 44px;
+            line-height: 44px;
+         }
+
+         &-image {
+            width: 44px;
+            height: 44px;
+         }
+      }
+   }
+
+   @include screen-width(480px) {
+      &__picture-list {
+         grid: 1fr 1fr 1fr / 1fr 1fr;
+      }
+
+      &__title {
+         gap: 10px;
+
+         &-text {
+            font-size: 32px;
+            line-height: 32px;
+         }
+
+         &-image {
+            width: 32px;
+            height: 32px;
+         }
+      }
+   }
+}

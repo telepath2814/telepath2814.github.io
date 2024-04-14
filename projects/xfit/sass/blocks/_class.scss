@@ -1,0 +1,97 @@
+@use '../partitials/config' as *;
+
+.class {
+   display: flex;
+   flex-direction: column;
+   gap: 80px;
+
+   &__card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 80px;
+
+      &-info {
+         max-width: 512px;
+
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+
+         &-title {
+            font-size: 72px;
+            line-height: 72px;
+            font-weight: bold;
+            text-transform: uppercase;
+         }
+      }
+
+      &-picture {
+         width: 100%;
+         min-width: 320px;
+         overflow: hidden;
+         cursor: pointer;
+
+         &-image {
+            width: 100%;
+            height: auto;
+            display: flex;
+            transition: transform $hover-duration;
+            transform-origin: center center;
+         }
+
+         &:hover &-image {
+            transform: scale($hover-scale-image);
+         }
+      }
+   }
+
+   &--odd &__card:nth-child(odd) &__card-info,
+   &--even &__card:nth-child(even) &__card-info {
+      order: 0;
+   }
+
+   &--odd &__card:nth-child(odd) &__card-picture,
+   &--even &__card:nth-child(even) &__card-picture {
+      order: 1;
+   }
+
+   @include screen-width(1280px) {
+      &__card-info-title {
+         font-size: 56px;
+         line-height: 56px;
+      }
+   }
+
+   @include screen-width(1024px) {
+      &__card {
+         gap: 40px;
+
+         &-info-title {
+            font-size: 44px;
+            line-height: 44px;
+         }
+      }
+   }
+
+   @include screen-width(768px) {
+      &__card {
+         align-items: flex-start;
+         flex-direction: column;
+
+         &-picture {
+            min-width: auto;
+         }
+      }
+
+      &--odd &__card:nth-child(odd) &__card-picture,
+      &--even &__card:nth-child(even) &__card-picture {
+         order: 0;
+      }
+
+      &--odd &__card:nth-child(odd) &__card-info, 
+      &--even &__card:nth-child(even) &__card-info {
+         order: 1;
+      }
+   }
+}

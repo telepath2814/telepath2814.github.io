@@ -1,0 +1,139 @@
+@use '../partitials/config' as *;
+
+.testimonial {
+   max-width: 768px;
+   margin: 0 auto;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 40px;
+
+   &__slider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+
+      &-arrow {
+         z-index: 1;
+         width: 56px;
+         height: 56px;
+         cursor: pointer;
+         flex-shrink: 0;
+
+         &-left,
+         &-right {
+            width: 100%;
+            height: 100%;
+            transition: background $hover-duration;
+         }
+
+         &-left {
+            background: url(../assets/icons/arrow-left-white.svg) no-repeat;
+            
+            &:hover {
+               background: url(../assets/icons/arrow-left-accent.svg) no-repeat;
+            }
+         }
+
+         &-right {
+            background: url(../assets/icons/arrow-right-white.svg) no-repeat;
+            
+            &:hover {
+               background: url(../assets/icons/arrow-right-accent.svg) no-repeat;
+            }
+         }
+      }
+
+      &-client-list {
+         width: 320px;
+         height: 320px;
+         flex-shrink: 0;
+      }
+
+      &-client {
+         width: 100%;
+         height: 100%;
+
+         position: absolute;
+         left: 0;
+         top: 0;
+
+         opacity: 0;
+         border-radius: 50%;
+         transition: opacity $testimonial-duration;
+
+         &--show {
+            opacity: 1;
+         }
+      }
+   }
+
+   &__pagination {
+      display: flex;
+      gap: 20px;
+
+      &-circle {
+         width: 16px;
+         height: 16px;
+
+         cursor: pointer;
+         transition: background $testimonial-duration;
+
+         border-radius: 50%;
+         background: $color-white;
+
+         &--show {
+            background: $color-accent;
+         }
+      }
+   }
+
+   &__review {
+      width: 100%;
+      overflow: hidden;
+
+      &-list {
+         display: flex;
+         transition: $testimonial-duration;
+      }
+
+      &-item {
+         width: 100%;
+         flex-shrink: 0;
+         text-align: center;
+      }
+   }
+
+   @include screen-width(768px) {
+      &__slider {
+         gap: 20px;
+
+         &-arrow {
+            width: 48px;
+            height: 48px;
+         }
+      }
+   }
+
+   @include screen-width(480px) {
+      &__slider {
+         gap: 10px;
+
+         &-client-list {
+            width: 256px;
+            height: 256px;
+         }
+
+         &-arrow {
+            width: 32px;
+            height: 32px;
+         }
+      }
+
+      &__review-item {
+         text-align: left;
+      }
+   }
+}

@@ -1,0 +1,84 @@
+@use '../partitials/config' as *;
+
+.footer {
+   background: $color-white;
+   color: $color-black;
+
+   &__content {
+      max-width: 1280px;
+      padding: 80px 40px;
+      margin: 0 auto;
+
+      gap: 80px 0;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__title {
+      font-size: 44px;
+      line-height: 44px;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+   }
+
+   &__text {
+      display: block;
+   }
+
+   &__social {
+      max-width: 400px;
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-logo {
+         width: 160px;
+         height: 40px;
+         margin-bottom: 40px;
+         background: url(../assets/icons/xfit-logo.svg) no-repeat;
+      }
+
+      &-list {
+         margin-top: 20px;
+         display: flex;
+         gap: 20px;
+      }
+
+      &-link-image {
+         width: 20px;
+         height: 20px;
+         transition: transform $hover-duration;
+
+         &:hover {
+            transform: scale($hover-scale-icon);
+         }
+      }
+   }
+
+   &__schedule-list {
+      list-style-type: disc;
+      list-style-position: inside;
+   }
+
+   &__copyright {
+      background: $color-black;
+      color: $color-white;
+      text-align: center;
+      padding: 10px 0;
+   }
+
+   @include screen-width(1024px) {
+      &__social,
+      &__content {
+         flex-direction: column;
+         align-items: center;
+      }
+
+      &__text,
+      &__title {
+         text-align: center;
+      }
+   }
+}

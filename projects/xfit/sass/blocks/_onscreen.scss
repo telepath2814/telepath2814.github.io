@@ -1,0 +1,74 @@
+@use '../partitials/config' as *;
+
+.onscreen {
+   animation: $onscreen-duration forwards paused ease-in-out;
+   opacity: 0;
+
+   &--up {
+      transform: translateY($onscreen-offset);
+   }
+
+   &--left {
+      transform: translate($onscreen-offset);
+   }
+
+   &--right {
+      transform: translate(-$onscreen-offset);
+   }
+
+   &--up,
+   &--left,
+   &--right {
+      animation-name: translate;
+   }
+
+   &--scale {
+      transform: scale(.5);
+      animation-name: scale;
+   }
+
+   &--circle {
+      clip-path: circle(0%);
+      animation-name: circle;
+   }
+
+   &--rolldown {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      animation-name: polygon;
+   }
+
+   &--show {
+      animation-play-state: running;
+   }
+
+   @keyframes translate {
+      to {
+         transform: translate(0, 0);
+         opacity: 1;
+      }
+   }
+
+   @keyframes scale {
+      50% {
+         transform: scale(1.25);
+      }
+      100% {
+         transform: scale(1);
+         opacity: 1;
+      }
+   }
+
+   @keyframes circle {
+      to {
+         clip-path: circle(100%);
+         opacity: 1;
+      }
+   }
+
+   @keyframes polygon {
+      to {
+         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+         opacity: 1;
+      }
+   }
+}

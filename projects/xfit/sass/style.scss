@@ -1,0 +1,25 @@
+@use '../assets/fonts/Mont/stylesheet.css';
+
+@use 'partitials/reset';
+
+@use 'blocks/page';
+@use 'blocks/button';
+@use 'blocks/class-overview';
+@use 'blocks/class';
+@use 'blocks/contact-form';
+@use 'blocks/faq';
+@use 'blocks/feature';
+@use 'blocks/follow';
+@use 'blocks/footer';
+@use 'blocks/header';
+@use 'blocks/hero';
+@use 'blocks/history';
+@use 'blocks/mobile-menu';
+@use 'blocks/onscreen';
+@use 'blocks/popup-sale';
+@use 'blocks/popup-video';
+@use 'blocks/price';
+@use 'blocks/team-overview';
+@use 'blocks/team';
+@use 'blocks/testimonial';
+@use 'blocks/ticker';

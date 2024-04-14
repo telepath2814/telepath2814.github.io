@@ -1,0 +1,123 @@
+@use '../partitials/config' as *;
+
+.mobile-menu {
+   height: 0;
+   width: 100%;
+   z-index: 50;
+   overflow: hidden;
+   transition: height $menu-open-duration;
+   position: fixed;
+   top: 80px;
+   left: 0;
+
+   &__navigation {
+      background: $color-white;
+      max-width: 1280px;
+      margin: 0 auto;
+
+      display: grid;
+      grid: repeat(6, auto) / auto;
+
+      &-link {
+         height: 60px;
+         padding: 0 10px;
+         cursor: pointer;
+         background: $color-white;
+         transition: background $hover-duration;
+
+         font-weight: bold;
+         color: $color-black;
+         text-transform: uppercase;
+
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+
+         &:hover {
+            background: $color-accent;
+         }
+      }
+   }
+
+   &__background {
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      transition: opacity $menu-open-duration, visibility $menu-open-duration;
+      background: $color-overlay;
+      position: fixed;
+      left: 0;
+      top: 0;
+
+      &--show {
+         visibility: visible;
+         opacity: 1;
+      }
+   }
+
+   &__language {
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      background: $color-white;
+      transition: height $menu-open-duration;
+      overflow: hidden;
+
+      &-item {
+         height: 60px;
+         display: flex;
+         align-items: center;
+         padding: 0 10px;
+         flex-shrink: 0;
+         gap: 10px;
+
+         cursor: pointer;
+         transition: background $hover-duration;
+         text-transform: uppercase;
+         font-weight: bold;
+
+         &-img {
+            width: 20px;
+            height: 20px;
+            transition: transform calc($menu-open-duration / 2);
+         }
+
+         &:hover {
+            background: $color-accent;
+         }
+      }
+
+      &--open {
+         height: 180px;
+      }
+
+      &--open &-item-img {
+         transform: rotate(90deg);
+      }
+   }
+
+   &--open {
+      height: 480px;
+   }
+
+   @include screen-height (560px) {
+      &__navigation {
+         grid: auto auto auto / auto auto;
+      }
+
+      &--open {
+         height: 300px;
+      }
+   }
+
+   @include screen-height (380px) {
+      &__navigation {
+         grid: auto auto / auto auto auto;
+      }
+
+      &--open {
+         height: 240px;
+      }
+   }
+}

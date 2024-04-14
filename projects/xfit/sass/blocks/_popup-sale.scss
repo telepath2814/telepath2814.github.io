@@ -1,0 +1,132 @@
+@use '../partitials/config' as *;
+
+.popup-sale {
+   position: fixed;
+   left: 0;
+   top: 0;
+
+   width: 100%;
+   height: 100%;
+   z-index: 200;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity $popup-duration, visibility $popup-duration;
+
+   &__background {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: $color-overlay;
+   }
+
+   &__content {
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      background: $color-white;
+   }
+
+   &__info {
+      flex-shrink: 0;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-title,
+      &-description {
+         font-weight: 800;
+         text-align: center;
+         text-transform: uppercase;
+      }
+
+      &-title {
+         font-size: 48px;
+         line-height: 48px;
+         margin-bottom: 10px;
+      }
+
+      &-description {
+         font-size: 24px;
+         line-height: 24px;
+         margin-bottom: 20px;
+      }
+   }
+
+   &__picture {
+      max-width: 480px;
+
+      &-image {
+         width: 100%;
+         height: auto;
+         display: flex;
+      }
+   }
+
+   &__button-close {
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      transition: background $hover-duration;
+
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      &:hover {
+         background: $color-accent;
+      }
+   }
+
+   &--show {
+      visibility: visible;
+      opacity: 1;
+   }
+
+   @include screen-width(768px) {
+      &__content {
+         flex-direction: column;
+      }
+
+      &__info {
+         order: 0;
+
+         &-title {
+            font-size: 44px;
+            line-height: 44px;
+         }
+      }
+
+      &__picture {
+         order: 1;
+      }
+   }
+
+   @include screen-width(480px) {
+      &__info {
+         &-title {
+            font-size: 30px;
+            line-height: 30px;
+         }
+
+         &-description {
+            font-size: 16px;
+            line-height: 16px;
+         }
+      }
+
+      &__button-close {
+         width: 48px;
+         height: 48px;
+         right: 0;
+         top: 0;
+      }
+   }
+}

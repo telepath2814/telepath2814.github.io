@@ -1,0 +1,49 @@
+@use '../partitials/config' as *;
+@use "sass:map";
+
+.feature {
+   display: grid;
+   grid: 1fr / repeat(4, 1fr);
+   justify-items: center;
+   gap: 80px 20px;
+   margin: 0 auto;
+
+   &__item {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+
+      &-title {
+         font-size: 22px;
+         line-height: 22px;
+         text-transform: uppercase;
+      }
+
+      &-title,
+      &-description {
+         text-align: center;
+      }
+
+      &-image {
+         width: 72px;
+         height: 72px;
+      }
+   }
+
+   @include screen-width(1280px) {
+      max-width: 1024px;
+      grid: 1fr 1fr / 1fr 1fr;
+   }
+
+   @include screen-width(768px) {
+      max-width: 480px;
+      grid: repeat(4, 1fr) / 1fr;
+   }
+
+   @include screen-width(480px) {
+      &__item-description {
+         max-width: auto;
+      }
+   }
+}

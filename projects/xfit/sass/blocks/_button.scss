@@ -1,0 +1,89 @@
+@use '../partitials/config' as *;
+
+.button {
+   width: fit-content;
+   height: 60px;
+
+   border: none;
+   cursor: pointer;
+   padding: 0 20px;
+
+   font-size: 18px;
+   font-weight: bold;
+   font-family: 'Mont';
+   text-transform: uppercase;
+
+   transition: opacity $error-duration;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   flex-shrink: 0;
+
+   &__picture {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      overflow: hidden;
+      margin-left: 10px;
+
+      &-image {
+         width: 20px;
+         height: 20px;
+         flex-shrink: 0;
+
+         transition: transform $hover-duration;
+         transform: translate(-20px); 
+      }
+   }
+
+   &:hover &__picture-image {
+      transform: translate(0);
+   }
+
+   &--solid-accent,
+   &--solid-black {
+      color: $color-white;
+   }
+
+   &--solid-accent {
+      background: $color-accent;
+   }
+
+   &--solid-black {
+      background: $color-black;
+   }
+
+   &--unsolid-black,
+   &--unsolid-white {
+      background: none;
+      padding: 0;
+   }
+
+   &--unsolid-black {
+      color: $color-black;
+   }
+
+   &--unsolid-white {
+      color: $color-white;
+   }
+
+   &--solid-accent &__picture-image {
+      background: url(../assets/icons/arrow-right-black.svg) no-repeat;
+   }
+
+   &--solid-black &__picture-image,
+   &--unsolid-black &__picture-image,
+   &--unsolid-white &__picture-image {
+      background: url(../assets/icons/arrow-right-accent.svg) no-repeat;
+   }
+
+   &--disabled {
+      opacity: .2;
+      cursor: default;
+   }
+
+   &--disabled &__picture-image {
+      transition: none;
+   }
+}
