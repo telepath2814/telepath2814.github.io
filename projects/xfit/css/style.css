@@ -194,9 +194,8 @@ textarea:focus {
   width: 150%;
   height: 100%;
   z-index: 300;
-  display: flex;
+  display: none;
   flex-direction: column;
-  transition: visibility 0.5s;
   position: fixed;
   left: -25%;
   top: 0;
@@ -223,10 +222,10 @@ textarea:focus {
   transition: transform 0.5s;
 }
 .page__transition--in {
-  visibility: hidden;
+  display: flex;
 }
 .page__transition--out {
-  visibility: visible;
+  display: flex;
 }
 .page__transition--in .page__transition-item-content {
   transform-origin: right;
