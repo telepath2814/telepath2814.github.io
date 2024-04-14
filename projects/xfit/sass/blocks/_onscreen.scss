@@ -8,6 +8,10 @@
       transform: translateY($onscreen-offset);
    }
 
+   &--down {
+      transform: translateY(-$onscreen-offset);
+   }
+
    &--left {
       transform: translate($onscreen-offset);
    }
@@ -17,6 +21,7 @@
    }
 
    &--up,
+   &--down,
    &--left,
    &--right {
       animation-name: translate;

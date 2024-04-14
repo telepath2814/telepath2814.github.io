@@ -980,6 +980,7 @@ textarea:focus {
 }
 .hero__info {
   max-width: 640px;
+  margin-top: 40px;
   flex-direction: column;
   display: flex;
   gap: 20px;
@@ -1180,13 +1181,16 @@ textarea:focus {
 .onscreen--up {
   transform: translateY(40px);
 }
+.onscreen--down {
+  transform: translateY(-40px);
+}
 .onscreen--left {
   transform: translate(40px);
 }
 .onscreen--right {
   transform: translate(-40px);
 }
-.onscreen--up, .onscreen--left, .onscreen--right {
+.onscreen--up, .onscreen--down, .onscreen--left, .onscreen--right {
   animation-name: translate;
 }
 .onscreen--scale {
