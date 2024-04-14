@@ -9,11 +9,7 @@ function init() {
 function inintTransition() {
     transition = document.querySelector('.page__transition');
     if (transition) {
-        if (transition.classList.contains('page__transition--out')) {
-            transition.classList.replace('page__transition--out', 'page__transition--in');
-        } else {
-            transition.classList.add('page__transition--in');
-        }
+        transition.classList.add('page__transition--in');
     }
 }
 
@@ -31,7 +27,10 @@ function changePage(event) {
     const linkNode = event.currentTarget;
     const linkURL = linkNode.attributes.href.value;
     transition.classList.replace('page__transition--in', 'page__transition--out');
-    setTimeout(() => location = linkURL, TRANSITION_DURATION_MS);
+    setTimeout(() => {
+        transition.classList.remove('page__transition--out');
+        location = linkURL;
+    }, TRANSITION_DURATION_MS);
 }
 
 export { init };
