@@ -382,6 +382,11 @@ textarea:focus {
 .class__card-picture:hover .class__card-picture-image {
   transform: scale(1.1);
 }
+@media (hover: none) {
+  .class__card-picture:hover .class__card-picture-image {
+    transform: inherit;
+  }
+}
 .class--odd .class__card:nth-child(odd) .class__card-info, .class--even .class__card:nth-child(even) .class__card-info {
   order: 0;
 }
@@ -642,6 +647,11 @@ textarea:focus {
 .follow__picture:hover .follow__picture-image {
   transform: scale(1.1);
 }
+@media (hover: none) {
+  .follow__picture:hover .follow__picture-image {
+    transform: inherit;
+  }
+}
 @media screen and (max-width: 1280px) {
   .follow__title-text {
     font-size: 72px;
@@ -807,9 +817,6 @@ textarea:focus {
   justify-content: center;
   align-items: center;
 }
-.header__mobile-menu-button:hover {
-  background: #ff841f;
-}
 .header__mobile-menu-button-line {
   width: 40px;
   height: 6px;
@@ -895,11 +902,6 @@ textarea:focus {
 @media screen and (max-width: 480px) {
   .header__content {
     padding: 0 10px;
-  }
-}
-@media (hover: none) {
-  .header__language-item:hover, .header__navigation-link:hover, .header__mobile-menu-button:hover {
-    background: inherit;
   }
 }
 @keyframes line1-open {
@@ -1084,6 +1086,11 @@ textarea:focus {
 .history__button-play:hover {
   background: url(../assets/icons/play-accent.svg) no-repeat;
 }
+@media (hover: none) {
+  .history__button-play:hover {
+    background: inherit;
+  }
+}
 
 .mobile-menu {
   height: 0;
@@ -1114,9 +1121,6 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.mobile-menu__navigation-link:hover {
-  background: #ff841f;
 }
 .mobile-menu__background {
   opacity: 0;
@@ -1157,9 +1161,6 @@ textarea:focus {
   width: 20px;
   height: 20px;
   transition: transform 0.5s;
-}
-.mobile-menu__language-item:hover {
-  background: #ff841f;
 }
 .mobile-menu__language--open {
   height: 180px;
@@ -1321,6 +1322,11 @@ textarea:focus {
 }
 .popup-sale__button-close:hover {
   background: #ff841f;
+}
+@media (hover: none) {
+  .popup-sale__button-close:hover {
+    background: inherit;
+  }
 }
 .popup-sale--show {
   visibility: visible;
@@ -1593,6 +1599,11 @@ textarea:focus {
 .team__card-picture:hover .team__card-picture-image {
   transform: scale(1.1);
 }
+@media (hover: none) {
+  .team__card-picture:hover .team__card-picture-image {
+    transform: inherit;
+  }
+}
 @media screen and (max-width: 1024px) {
   .team {
     grid: 1fr 1fr 1fr/1fr 1fr;
@@ -1641,6 +1652,11 @@ textarea:focus {
 }
 .testimonial__slider-arrow-right:hover {
   background: url(../assets/icons/arrow-right-accent.svg) no-repeat;
+}
+@media (hover: none) {
+  .testimonial__slider-arrow-left:hover, .testimonial__slider-arrow-right:hover {
+    background: inherit;
+  }
 }
 .testimonial__slider-client-list {
   width: 320px;

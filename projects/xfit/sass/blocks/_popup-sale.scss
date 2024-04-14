@@ -83,6 +83,12 @@
       &:hover {
          background: $color-accent;
       }
+
+      @media (hover: none) {
+         &:hover {
+            background: inherit; 
+         }
+      }
    }
 
    &--show {

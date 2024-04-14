@@ -44,6 +44,13 @@
                background: url(../assets/icons/arrow-right-accent.svg) no-repeat;
             }
          }
+
+         @media (hover: none) {
+            &-left:hover,
+            &-right:hover {
+               background: inherit; 
+            }
+         }
       }
 
       &-client-list {

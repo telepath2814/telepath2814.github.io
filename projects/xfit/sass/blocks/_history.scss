@@ -43,5 +43,11 @@
       &:hover {
          background: url(../assets/icons/play-accent.svg) no-repeat;
       }
+
+      @media (hover: none) {
+         &:hover {
+            background: inherit; 
+         }
+      }
    }
 }

@@ -49,6 +49,12 @@
          &:hover &-image {
             transform: scale($hover-scale-image);
          }
+
+         @media (hover: none) {
+            &:hover &-image {
+               transform: inherit; 
+            }
+         }
       }
    }
 

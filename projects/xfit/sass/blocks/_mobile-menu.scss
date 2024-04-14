@@ -32,10 +32,6 @@
          display: flex;
          flex-direction: column;
          justify-content: center;
-
-         &:hover {
-            background: $color-accent;
-         }
       }
    }
 
@@ -81,10 +77,6 @@
             width: 20px;
             height: 20px;
             transition: transform calc($menu-open-duration / 2);
-         }
-
-         &:hover {
-            background: $color-accent;
          }
       }
 
