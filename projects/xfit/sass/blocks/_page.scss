@@ -99,13 +99,13 @@
          }
       }
 
-      /*&--in {
+      &--in {
          visibility: hidden;
       }
 
       &--out {
          visibility: visible;
-      }*/
+      }
 
       &--in &-item-content {
          transform-origin: right;
