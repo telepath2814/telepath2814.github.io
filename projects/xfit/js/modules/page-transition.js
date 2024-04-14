@@ -9,7 +9,7 @@ function init() {
 function initTransition() {
     transition = document.querySelector('.page__transition');
     if (transition) {
-        console.log('transition');
+        console.log('transition ' + new Date());
         transition.classList.add('page__transition--in');
         transition.style.visibility = 'hidden';
     }
@@ -18,7 +18,7 @@ function initTransition() {
 function initLinks() {
     const linkList = document.querySelectorAll('.page__link');
     if (linkList.length > 0) {
-        console.log('linkList.length > 0');
+        console.log('linkList.length > 0' + new Date());
         linkList.forEach(link => {
             link.addEventListener('click', changePage);
         });
