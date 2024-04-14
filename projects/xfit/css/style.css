@@ -871,6 +871,9 @@ textarea:focus {
   transform: rotate(90deg);
 }
 @media screen and (max-width: 1024px) {
+  .header {
+    height: 60px;
+  }
   .header__content {
     padding: 0 20px;
   }
@@ -1079,7 +1082,7 @@ textarea:focus {
   overflow: hidden;
   transition: height 1s;
   position: fixed;
-  top: 80px;
+  top: 60px;
   left: 0;
 }
 .mobile-menu__navigation {
