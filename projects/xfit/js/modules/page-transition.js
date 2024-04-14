@@ -9,7 +9,11 @@ function init() {
 function inintTransition() {
     transition = document.querySelector('.page__transition');
     if (transition) {
-        transition.classList.add('page__transition--in');
+        if (transition.classList.contains('page__transition--out')) {
+            transition.classList.replace('page__transition--out', 'page__transition--in');
+        } else {
+            transition.classList.add('page__transition--in');
+        }
     }
 }
 
