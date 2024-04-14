@@ -33,8 +33,9 @@ function changePage(event) {
     transition.classList.replace('page__transition--in', 'page__transition--out');
 
     setTimeout(() => {
-        transition.classList.replace('page__transition--out', 'page__transition--in');
+        transition.classList.remove('page__transition--out');
         location = linkURL;
+        initTransition();
     }, TRANSITION_DURATION_MS);
 }
 
