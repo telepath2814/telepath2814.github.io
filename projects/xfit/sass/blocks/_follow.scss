@@ -45,13 +45,9 @@
          transition: $hover-duration;
       }
 
-      &:hover &-image {
-         transform: scale($hover-scale-image);
-      }
-
-      @media (hover: none) {
+      @media (hover: hover) {
          &:hover &-image {
-            transform: inherit; 
+            transform: scale($hover-scale-image);
          }
       }
    }

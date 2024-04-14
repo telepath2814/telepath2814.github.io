@@ -37,8 +37,10 @@
       }
    }
 
-   &:hover &__picture-image {
-      transform: translate(0);
+   @media (hover: hover) {
+      &:hover &__picture-image {
+         transform: translate(0);
+      }
    }
 
    &--solid-accent,
@@ -85,11 +87,5 @@
 
    &--disabled &__picture-image {
       transition: none;
-   }
-
-   @media (hover: none) {
-      &:hover &__picture-image {
-         transform: inherit; 
-      }
    }
 }

@@ -294,8 +294,10 @@ textarea:focus {
   transition: transform 1s;
   transform: translate(-20px);
 }
-.button:hover .button__picture-image {
-  transform: translate(0);
+@media (hover: hover) {
+  .button:hover .button__picture-image {
+    transform: translate(0);
+  }
 }
 .button--solid-accent, .button--solid-black {
   color: #FFFFFF;
@@ -328,11 +330,6 @@ textarea:focus {
 }
 .button--disabled .button__picture-image {
   transition: none;
-}
-@media (hover: none) {
-  .button:hover .button__picture-image {
-    transform: inherit;
-  }
 }
 
 .class-overview__content {
@@ -379,12 +376,9 @@ textarea:focus {
   transition: transform 1s;
   transform-origin: center center;
 }
-.class__card-picture:hover .class__card-picture-image {
-  transform: scale(1.1);
-}
-@media (hover: none) {
+@media (hover: hover) {
   .class__card-picture:hover .class__card-picture-image {
-    transform: inherit;
+    transform: scale(1.1);
   }
 }
 .class--odd .class__card:nth-child(odd) .class__card-info, .class--even .class__card:nth-child(even) .class__card-info {
@@ -644,12 +638,9 @@ textarea:focus {
   display: flex;
   transition: 1s;
 }
-.follow__picture:hover .follow__picture-image {
-  transform: scale(1.1);
-}
-@media (hover: none) {
+@media (hover: hover) {
   .follow__picture:hover .follow__picture-image {
-    transform: inherit;
+    transform: scale(1.1);
   }
 }
 @media screen and (max-width: 1280px) {
@@ -1083,12 +1074,9 @@ textarea:focus {
   transition: background 1s;
   background: url(../assets/icons/play-white.svg) no-repeat;
 }
-.history__button-play:hover {
-  background: url(../assets/icons/play-accent.svg) no-repeat;
-}
-@media (hover: none) {
+@media (hover: hover) {
   .history__button-play:hover {
-    background: inherit;
+    background: url(../assets/icons/play-accent.svg) no-repeat;
   }
 }
 
@@ -1320,12 +1308,9 @@ textarea:focus {
   right: 0;
   top: 0;
 }
-.popup-sale__button-close:hover {
-  background: #ff841f;
-}
-@media (hover: none) {
+@media (hover: hover) {
   .popup-sale__button-close:hover {
-    background: inherit;
+    background: #ff841f;
   }
 }
 .popup-sale--show {
@@ -1596,12 +1581,9 @@ textarea:focus {
   transition: transform 1s;
   transform-origin: center center;
 }
-.team__card-picture:hover .team__card-picture-image {
-  transform: scale(1.1);
-}
-@media (hover: none) {
+@media (hover: hover) {
   .team__card-picture:hover .team__card-picture-image {
-    transform: inherit;
+    transform: scale(1.1);
   }
 }
 @media screen and (max-width: 1024px) {
@@ -1644,18 +1626,17 @@ textarea:focus {
 .testimonial__slider-arrow-left {
   background: url(../assets/icons/arrow-left-white.svg) no-repeat;
 }
-.testimonial__slider-arrow-left:hover {
-  background: url(../assets/icons/arrow-left-accent.svg) no-repeat;
+@media (hover: hover) {
+  .testimonial__slider-arrow-left:hover {
+    background: url(../assets/icons/arrow-left-accent.svg) no-repeat;
+  }
 }
 .testimonial__slider-arrow-right {
   background: url(../assets/icons/arrow-right-white.svg) no-repeat;
 }
-.testimonial__slider-arrow-right:hover {
-  background: url(../assets/icons/arrow-right-accent.svg) no-repeat;
-}
-@media (hover: none) {
-  .testimonial__slider-arrow-left:hover, .testimonial__slider-arrow-right:hover {
-    background: inherit;
+@media (hover: hover) {
+  .testimonial__slider-arrow-right:hover {
+    background: url(../assets/icons/arrow-right-accent.svg) no-repeat;
   }
 }
 .testimonial__slider-client-list {

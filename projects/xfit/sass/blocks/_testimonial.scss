@@ -32,23 +32,20 @@
          &-left {
             background: url(../assets/icons/arrow-left-white.svg) no-repeat;
             
-            &:hover {
-               background: url(../assets/icons/arrow-left-accent.svg) no-repeat;
+            @media (hover: hover) {
+               &:hover {
+                  background: url(../assets/icons/arrow-left-accent.svg) no-repeat;
+               }
             }
          }
 
          &-right {
             background: url(../assets/icons/arrow-right-white.svg) no-repeat;
             
-            &:hover {
-               background: url(../assets/icons/arrow-right-accent.svg) no-repeat;
-            }
-         }
-
-         @media (hover: none) {
-            &-left:hover,
-            &-right:hover {
-               background: inherit; 
+            @media (hover: hover) {
+               &:hover {
+                  background: url(../assets/icons/arrow-right-accent.svg) no-repeat;
+               }
             }
          }
       }

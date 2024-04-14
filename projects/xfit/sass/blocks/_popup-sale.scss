@@ -80,13 +80,9 @@
       right: 0;
       top: 0;
 
-      &:hover {
-         background: $color-accent;
-      }
-
-      @media (hover: none) {
+      @media (hover: hover) {
          &:hover {
-            background: inherit; 
+            background: $color-accent;
          }
       }
    }
